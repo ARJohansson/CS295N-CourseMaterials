@@ -18,6 +18,11 @@ namespace HttpPractice.Controllers
             return View();
         }
 
+        public IActionResult PageThree()
+        {
+            return View();
+        }
+
         public IActionResult Quiz()
         {
             Random rand = new Random();
@@ -42,9 +47,8 @@ namespace HttpPractice.Controllers
             numbers.Add(rand.Next(10));
             return View(numbers);
         }
-
-        [HttpPut]
-        public IActionResult Quiz2(int number1, int number2, int answer)
+        
+        public IActionResult Quiz2Answer(int number1, int number2, int answer)
         {
             string check = "wrong :-(";
             if (number1 * number2 == answer)
